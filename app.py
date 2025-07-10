@@ -30,7 +30,7 @@ if st.session_state.clicked[1]:
        df = pd.read_csv(uploaded_file, low_memory=True)
        st.header("Uploaded Data Preview")
        st.write(df.head())
-       model = joblib.load('random_forest_classifier.joblib')
+       model = joblib.load('models/random_forest_classifier.joblib')
        pred = model.predict_proba(df)
        pred = pd.DataFrame(pred, columns = ['setosa_probability', 'versicolor_probability', 'virginica_probability'])
        st.header("Prediction Results")
